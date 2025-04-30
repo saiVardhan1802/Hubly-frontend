@@ -1,0 +1,118 @@
+.container > h1 {
+    color: #6A6B70;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1.2vw 2vw;
+}
+
+.container {
+    /* background-color: red; */
+    /* height: 100vh; */
+    width: 25%;
+    border-right: 1px solid #D1D6DA;
+}
+
+.empty {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: #F0F0F0;
+}
+
+.header {
+    width: 97%;
+    border-bottom: 1px solid #D7D8D8;
+    margin: 3em auto 0 auto;
+}
+
+.header > div {
+    position: relative;
+    width: fit-content;
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    color: #888888;
+}
+
+.header > div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    /* background-color: #B9BABA; */
+    border: 1.5px solid #B9BABA;
+    top: 135%;
+}
+
+.ticketsContainer {
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    /* background-color: red; */
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.ticketsContainer > button {
+    width: 100%;
+    position: relative;
+}
+
+.clickedButton::after {
+    content: "";
+    position: absolute;
+    width: 1%;
+    height: 60%;
+    background-color: #184E7F; 
+    top: 50%;
+    left: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transform: translateY(-50%);
+}
+
+.chatBox {
+    width: 97%;
+    margin: 0 auto;
+    display: flex;
+    gap: 0.7em;
+    align-items: center;
+    border-radius: 30px;
+    /* border: 1px solid #D7D8D8; */
+    padding: 0.5em;
+}
+
+.chatBox > img {
+    width: 15%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color:#6A6B70;
+}
+
+.chatBox > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25em;
+    height: 100%;
+}
+
+/* .chatBox > div > p {
+    margin-right: auto;
+    background-color: black;
+    width: fit-content;
+    margin: 0;
+} */
+
+.chatTitle {
+    color: #5E9BD5;
+    font-size: 1.1rem;
+}
+
+.lastChat {
+    color: #9a9b9a;
+    font-size: 0.9rem;
+}

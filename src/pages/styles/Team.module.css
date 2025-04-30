@@ -1,0 +1,146 @@
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.main {
+  width: 93%;
+  font-family: "Inter", sans-serif;
+  overflow-y: auto;
+  padding-bottom: 1em;
+}
+
+.main>h1 {
+  color: #6A6B70;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.2vw 2vw;
+}
+
+.main h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 1vw 1vw;
+}
+
+.teamsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.teamGrid {
+  width: 100%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.teamHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 2fr 1fr 3fr;
+  gap: 1em;
+  border-bottom: 1px solid #6A6A6A;
+  border-top: 1px solid #6A6A6A;
+  padding: 12px 16px;
+  align-items: center;
+  font-weight: 600;
+  color: #184E7F;
+}
+
+.teamHeader>.teamMemberName {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+}
+
+.teamGrid>div:not(.teamHeader) {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 2fr 1fr 3fr;
+  gap: 1em;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #E2E8F0;
+  border-top: 1px solid #E2E8F0;
+  transition: background-color 0.3s ease;
+  color: #020617;
+}
+
+/* .teamGrid > div:not(.teamHeader):hover {
+    background-color: #f5f5f5;
+  } */
+
+.teamMemberImage img {
+  width: 30%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.teamMemberImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamMemberName,
+.teamMemberRole {
+  display: flex;
+  align-items: center;
+  /* gap: 8px; */
+  justify-content: center;
+  /* background-color: rgba(0, 128, 0, 0.196); */
+}
+
+/* .teamMemberPhone {
+    background-color: rgba(128, 0, 0, 0.196);
+  }
+
+  .teamMemberEmail {
+    background-color: rgba(0, 0, 128, 0.196);
+  }
+  .teamMemberRole {
+    background-color: rgba(128, 128, 0, 0.196);
+  } */
+
+.teamMemberName p,
+.teamMemberPhone p,
+.teamMemberEmail p,
+.teamMemberRole p {
+  margin: 0;
+  color: #555;
+  font-weight: 500;
+}
+
+.teamMemberPhone p {
+  color: #007bff;
+  /* blue color for phone */
+}
+
+.teamMemberRole p {
+  text-transform: capitalize;
+}
+
+.buttons {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+  align-items: center;
+  color: #545454;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border-radius: 6px;
+  background-color: #184E7F;
+  color: white;
+  /* margin: 1em 0 auto 0; */
+  margin-left: auto;
+  margin-top: 1em;
+  margin-right: 1em;
+}

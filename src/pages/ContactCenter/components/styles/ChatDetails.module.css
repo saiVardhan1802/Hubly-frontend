@@ -1,0 +1,85 @@
+.container {
+    background-color: #FAFBFC;
+    height: 100vh;
+    width: 32.5%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.empty {
+    width: 32.5%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: #F0F0F0;
+    
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin: 1em;
+}
+
+.container > h2 {
+    color: #184E7F;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 1em;
+}
+
+.box {
+    width: 97%;
+    display: flex;
+    gap: 1em;
+    margin: 0.5em auto;
+    background-color: white;
+    padding: 0.5em 0.2em;
+    border-radius: 10px;
+    color: #808080;
+    font-size: 0.9rem;
+    border: 1px solid #D1D6DA;
+    align-items: center;
+}
+
+.dropBox {
+    position: relative;
+}
+
+.dropBox::after {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    aspect-ratio: 1/1;
+    border-bottom: 2px solid #808080;
+    border-left: 2px solid #808080;
+    top: 40%;
+    right: 5%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.selectionContainer {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    align-items: flex-start;
+}
+
+.selectionContainer > button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border-top: 1px solid #E7E7E7;
+    cursor: pointer;
+    padding: 0.5em 0.2em;
+    color: #808080;
+    /* padding: 0.5em 0.2em;  */
+    /* Add if you want some vertical spacing */
+}
+
+.selectionContainer > button:first-child {
+    border-top: none;
+}

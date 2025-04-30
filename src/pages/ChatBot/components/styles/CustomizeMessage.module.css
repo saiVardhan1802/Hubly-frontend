@@ -1,0 +1,37 @@
+.container {
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.container > h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.inputContainer {
+    margin-top: 0.5em;
+}
+
+.inputContainer > div {
+    position: relative;
+    width: 60%;
+}
+
+.inputContainer input {
+    width: 100%;
+    background-color: #F6F7F5;
+    border-radius: 6px;
+    border: none;
+    margin-top: 1em;
+    padding: 1em 2em 1em 0.5em;
+}
+
+.editIcon {
+    position: absolute;
+    right: 0.5em;
+    top: 60%;
+    transform: translateY(-50%);
+    color: #606060;
+}

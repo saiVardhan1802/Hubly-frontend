@@ -1,0 +1,56 @@
+.chatContainer {
+    height: 375px;
+    padding: 1em;
+    /* overflow-y: auto; */
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.textareaWrapper > textarea {
+    width: 100%;
+    border: none;
+    padding: 1em 3em 1em 1em;
+    font-family: "Helvetica", sans-serif;
+}
+
+.textareaWrapper > textarea::placeholder {
+    color: #8498B6;
+}
+
+.textareaWrapper {
+    position: relative;
+}
+
+.sendIcon {
+    position: absolute;
+    right: 1em;
+    top: 43%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.chatBox {
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    width: 70%;
+    display: flex;
+    /* justify-content: space-between; */
+    /* gap: 5%; */
+    /* background-color: black; */
+}
+
+.chatBox > img {
+    width: 12%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    align-self: flex-start;
+}
+
+.chatText {
+    width: 85%;
+    padding: 1em 1em;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: auto;
+}

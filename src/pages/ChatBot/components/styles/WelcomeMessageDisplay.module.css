@@ -1,0 +1,27 @@
+.container {
+    width: 30%;
+    position: relative;
+}
+
+.messageWrapper {
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    padding: 2em 1em 1em 1em;
+    font-size: 0.9rem;
+    color: #8498B6;
+}
+
+.container > img {
+    position: absolute;
+    left: 42.5%;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+    display: inline;
+}
+
+.container > button {
+    position: absolute;
+    top: 0.2em;
+    right: 0.2em;
+    color: #8498B6;
+}

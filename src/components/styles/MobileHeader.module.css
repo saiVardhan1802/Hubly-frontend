@@ -1,0 +1,38 @@
+.profileContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.brand {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    align-items: center;
+}
+
+.profileImg {
+    width: 100%;
+}
+
+.profileImg > img {
+    height: auto;
+}
+
+.logoutWrapper {
+    display: inline;
+    z-index: 100;
+}
+
+.logout {
+    display: flex;
+    
+}
+
+/* laptops */
+@media (min-width: 1023px) {
+    .profileContainer {
+        display: none;
+    }
+}

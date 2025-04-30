@@ -1,0 +1,46 @@
+.container {
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.container > h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.colors {
+    display: flex;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.colors > button {
+    width: 3em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid #D4D4D4 ;
+}
+
+.colorInputContainer {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.colorInputContainer > div {
+    width: 2.5em;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    border: 1px solid #D4D4D4 ;
+}
+
+.colorInputContainer > input {
+    width: 60%;
+    background-color: #F6F7F5;
+    border-radius: 6px;
+    border: none;
+    padding: 0.5em;
+}

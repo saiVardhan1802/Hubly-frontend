@@ -1,0 +1,18 @@
+.wrapper > label {
+    color: #505050;
+    font-size: 0.75em;
+}
+
+.wrapper {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.wrapper > input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #C3C3C3;
+    font-size: 1em;
+}

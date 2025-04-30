@@ -1,0 +1,84 @@
+.container {
+    width: 100%;
+    flex: 0.75;
+    overflow-y: auto;
+    justify-content: flex-end;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    flex-grow: 1;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: flex-end;
+}
+
+.chatBox {
+    width: 80%;
+    display: flex;
+    gap: 0.7em;
+    /* border: 1px solid #D7D8D8; */
+    padding: 0.5em;
+}
+
+.chatBox > img {
+    width: 8%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color:#6A6B70;
+    align-self: flex-start;
+}
+
+.chatBox > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25em;
+    height: 100%;
+}
+
+.chatTitle {
+    color: #5E9BD5;
+    font-size: 1.1rem;
+}
+
+.messageText {
+    color: #9a9b9a;
+    font-size: 0.9rem;
+}
+
+.team {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.team > div {
+    align-items: flex-end;
+}
+
+.visitor {
+    margin-right: auto;
+    /* flex-direction: row-reverse; */
+}
+
+.dateDivider {
+    display: flex;
+    align-items: center;
+    color: #8C8E92;
+}
+
+.dateDivider p {
+    margin: 0.5em;
+    font-size: 0.8rem;
+}
+
+.dateDivider hr {
+    flex: 1;
+    height: 1px;
+    border: none;
+    background-color: #ddd;
+}
+  

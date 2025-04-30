@@ -1,0 +1,104 @@
+.container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+    /* pointer-events: none; */
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    background-color: #33475B;
+    padding: 0.5em 0.5em;
+    font-family: "Helvetica", sans-serif;
+    color: #ffffff;
+}
+
+.profileImg {
+    width: 10%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profileImg > img {
+    width: 90%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.chatContainer {
+    height: 375px;
+    padding: 1em;
+    /* overflow-y: auto; */
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.textareaWrapper > textarea {
+    width: 100%;
+    border: none;
+    padding: 1em 1em 1em 1em;
+    font-family: "Helvetica", sans-serif;
+}
+
+.textareaWrapper > textarea::placeholder {
+    color: #8498B6;
+}
+
+.textareaWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sendButton {
+    /* position: absolute;
+    right: 1em;
+    top: 43%;
+    transform: translateY(-50%); */
+    cursor: pointer;
+    padding: 0.5em;
+}
+
+.chatBox {
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    width: 70%;
+    display: flex;
+    /* justify-content: space-between; */
+    /* gap: 5%; */
+    /* background-color: black; */
+}
+
+.chatBox > img {
+    width: 12%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    align-self: flex-start;
+}
+
+.chatText {
+    width: 85%;
+    padding: 1em 1em;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: auto;
+}
+
+/* @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        background-color: red;
+    }
+} */

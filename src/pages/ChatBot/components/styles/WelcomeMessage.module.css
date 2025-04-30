@@ -1,0 +1,44 @@
+.container {
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.container > h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.textareaWrapper {
+    margin-top: 1.5em;
+    position: relative;
+}
+
+.textareaWrapper > textarea {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: 2em 5em 2em 1em;
+    background-color: #F6F7F5;
+    resize: none;
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.textareaWrapper > span , .editIcon {
+    position: absolute;
+}
+
+.textareaWrapper > span {
+    right: 7%;
+    top: 5%;
+    color: #838383;
+    font-size: 0.7rem;
+}
+
+.editIcon {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3%;
+}

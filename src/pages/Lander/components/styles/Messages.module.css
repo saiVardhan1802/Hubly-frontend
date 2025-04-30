@@ -1,0 +1,27 @@
+.messageText {
+    width: fit-content;
+    padding: 1em 1em;
+    border-radius: 10px;
+    background-color: white;
+    /* margin-left: auto; */
+}
+
+.right {
+    margin-left: auto;
+    padding: 1em 1em;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.left {
+    width: 70%;
+    display: flex;
+    gap: 5%;
+}
+
+.emptyLeft {
+    width: 12%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    align-self: flex-start;
+}

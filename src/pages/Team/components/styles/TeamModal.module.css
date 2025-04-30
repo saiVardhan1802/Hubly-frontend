@@ -1,0 +1,108 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1em;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80%;
+    overflow-y: auto;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.formContainer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.formContainer > div > input, .designationButton {
+    padding: 0.5em;
+    border-radius: 8px;
+    border: 1px solid #D1D6DA;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.formContainer input::placeholder {
+    font-size: 0.8rem;
+}
+
+
+.designationButton > p {
+    float: left;
+}
+
+.designationButton {
+    position: relative;
+}
+
+.designationButton::after {
+    content: "";
+    position: absolute;
+    width: 0.5em;
+    aspect-ratio: 1/1;
+    border-bottom: 2px solid #808080;
+    border-left: 2px solid #808080;
+    top: 40%;
+    right: 2%;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.optionButtons {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid #D1D6DA;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.optionButtons > button:first-child {
+    border-bottom: 1px solid #D1D6DA;
+}
+
+.optionButtons > button > p {
+    float: left;
+    margin: 0.5em;
+}
+
+.buttons {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+    align-items: center;
+}
+
+.buttons > button {
+    width: 30%;
+    padding: 0.5em;
+    border-radius: 8px;
+
+}

@@ -102,7 +102,7 @@ const ChatDetails = ({ tickets, selectedTicketId, setTickets, setLeavingMessage 
       )}
       {openTeams &&
         <div className={`${styles.box} ${styles.selectionContainer}`}>
-          {Object.values(teams)?.map((team, index) => (
+          {Object.values(teams)?.filter(team => team.teamId !== user.team.teamId).map((team, index) => (
             <button key={index} onClick={() => {
               setModalType('teams');
               setIsModalOpen(true);
@@ -131,7 +131,7 @@ const ChatDetails = ({ tickets, selectedTicketId, setTickets, setLeavingMessage 
       )}
       {openTeamMembers &&
         <div className={`${styles.box} ${styles.selectionContainer}`}>
-          {currentUserTeam?.users.map((user, index) => (
+          {currentUserTeam?.users.filter(item => item._id !== user.id).map((user, index) => (
             <button key={index} onClick={() => {
               setModalType('members')
               setIsModalOpen(true);

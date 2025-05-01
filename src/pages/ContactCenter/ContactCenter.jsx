@@ -60,7 +60,7 @@ const ContactCenter = () => {
   }, [chatTitle]);
 
   useEffect(() => {
-    if (tickets.length > 0 || !selectedTicketId) {
+    if (tickets.length > 0 && !selectedTicketId) {
       console.log(tickets);
       setSelectedTicketId(tickets[0]?._id);
     }

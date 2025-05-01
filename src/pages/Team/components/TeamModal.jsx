@@ -49,7 +49,8 @@ const TeamModal = ({ setIsModal, team, editMode, setEditMode, selectedUser, setS
     if (!editMode) {
       try {
         const response = await createNewTeamMember(token, team.teamId, adminId, memberData.phone, memberData.email, memberData.designation, team.teamName);
-        if (!response.ok) return toast.error("Failed to create a new member. Please try again.");
+        const data = await response.json();
+        if (!response.ok) return toast.error(data.message || "Failed to create a new member. Please try again.");
         toast.success("New team member created successfully");
       } catch (error) {
         console.error(error)
@@ -59,7 +60,8 @@ const TeamModal = ({ setIsModal, team, editMode, setEditMode, selectedUser, setS
       //teamId, phone, email, designation, adminId, userId, teamName
       try {
         const response = await editTeamMember(token, team.teamId, selectedUser._id, adminId, memberData.phone, memberData.email, memberData.designation, team.teamName);
-        if (!response.ok) return toast.error("Failed to edit new member. Please try again.");
+        const data = await response.json();
+        if (!response.ok) return toast.error(data.message || "Failed to edit member. Please try again.");
         toast.success("New team member created successfully");
 
       } catch (error) {

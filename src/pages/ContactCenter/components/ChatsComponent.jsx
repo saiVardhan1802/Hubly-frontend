@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import styles from './styles/ChatsComponent.module.css';
 import { getMessages, getTicketsById } from '../../../services';
 import { SetUserContext, UserContext } from '../../../services/Context/UserContext';
@@ -16,7 +16,16 @@ const ChatsComponent = ({ tickets, selectedTicketId, setSelectedTicketId, setCha
   const [chatMessages, setChatMessages] = useState();
 
   
-
+  const sortedTickets = useMemo(() => {
+    return tickets.slice().sort((a, b) => {
+      const aUn = a.status === 'unresolved';
+      const bUn = b.status === 'unresolved';
+      if (aUn && !bUn) return -1;        // a unresolved, b resolved => a first
+      if (!aUn && bUn) return 1;         // b unresolved, a resolved => b first
+      // same status, so latest first
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    });
+  }, [tickets]);
 
 
   function handleSelectedTicket(ticket) {
@@ -37,7 +46,7 @@ const ChatsComponent = ({ tickets, selectedTicketId, setSelectedTicketId, setCha
       </div>
       {/* {!tickets?.lenght === 0 ? */}
       <div className={styles.ticketsContainer}>
-        {tickets?.map((ticket, index) => (
+        {sortedTickets.map((ticket, index) => (
           <button type='button' className={ticket._id === selectedTicketId ? styles.clickedButton : ''} 
             key={index}  
             onClick={() => {

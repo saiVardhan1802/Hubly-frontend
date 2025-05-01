@@ -62,6 +62,6 @@ button {
 
 @media (min-width: 1501px) {
   html {
-    font-size: clamp(8px, 2vw, 30px);
+    font-size: clamp(8px, 2vw, 24px);
   }
 }

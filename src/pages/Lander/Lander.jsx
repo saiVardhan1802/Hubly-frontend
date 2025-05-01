@@ -11,6 +11,7 @@ import Companies from './components/Companies';
 import combined from '../../assets/lander/combined.png'
 import Funnel from './components/Funnel';
 import SubscriptionComponent from './components/SubscriptionComponent';
+import Footer from './components/Footer';
 
 const Lander = () => {
     const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -100,6 +101,7 @@ const Lander = () => {
                         listItems={grow}
                     />
                 </div>
+                <Footer />
             </div>
             <div className={styles.chatbot}>
                 {!isChatbotOpen ? <WelcomeMessageDisplay containerStyles={{

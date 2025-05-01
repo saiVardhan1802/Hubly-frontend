@@ -41,7 +41,7 @@ const TeamsContextProvider = ({ children }) => {
                     response = await getTeam(token, user.team.teamId);
                 }
                 if (!response.ok) {
-                    toast.error("Failed to fetch the team. Please try again.")
+                    // toast.error("Failed to fetch the team. Please try again.")
                     return;
                 }
                 const users = await response.json();

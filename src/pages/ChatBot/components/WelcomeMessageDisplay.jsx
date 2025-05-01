@@ -52,7 +52,7 @@ const WelcomeMessageDisplay = ({ containerStyles }) => {
     // const customization = useCustomization(); this is working when I comment out everything above
     return (
         <div style={{...containerStyles,
-            display: isClosed && 'none'
+            // display: isClosed && 'none'
         }} className={styles.container}>
             <img src={teamProfileImg} alt="team profile" className={styles.teamProfileImg} />
             <div className={styles.messageWrapper}>

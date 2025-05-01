@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles/ChatViewer.module.css';
 import MessageArea from './MessageArea';
 import TextAreaComponent from './TextAreaComponent';
-import { getMessages } from '../../../services';
+import { getMessages, getMessagesByTicketId } from '../../../services';
 import { GoHome } from "react-icons/go";
 import { useNavigate } from 'react-router-dom';
 import ChatbotComponent from '../../ChatBot/components/ChatbotComponent';
@@ -12,6 +12,7 @@ const ChatViewer = ({ tickets, selectedTicketId, chatTitle, leavingMessage }) =>
   const [selectedTicket, setSelectedTicket] = useState({});
   const [chatMessages, setChatMessages] = useState([]);
   const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
     if (tickets.length === 0 || !selectedTicketId) return;
@@ -30,7 +31,7 @@ const ChatViewer = ({ tickets, selectedTicketId, chatTitle, leavingMessage }) =>
 
     async function fetchMessages() {
       try {
-        const response = await getMessages(selectedTicket.visitorId);
+        const response = await getMessagesByTicketId(selectedTicketId, token);
         if (!response.ok) return toast.error('Failed to fetch messages. Please try again.');
         const data = await response.json();
         const messagesFromApi = data.messages;

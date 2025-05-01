@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+}
+
+.sales, .calendar, .container > div {
+    position: absolute;
+    z-index: 2;
+}
+
+.sales {
+    bottom: -15%;
+    left: 70%;
+}
+
+.calendar {
+    bottom: -40%;
+    right: 50%;
+}
+
+.container > div {
+    top: -10%;
+    right: -30%;
+    display: inline-flex;
+    background-color: white;
+    gap: 0.5em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    border-radius: 8px;
+}
+
+.container > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+}

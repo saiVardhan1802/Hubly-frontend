@@ -46,7 +46,8 @@ const Settings = () => {
       const response = await updateUser(token, profileData, user.id);
       const data = await response.json();
       if (!response.ok) return toast.error(data.message || "Failed update profile. Please try again.");
-      if (data.password || data.email) {
+      console.log(data);
+      if (data.logout) {
         localStorage.clear();
         navigate('/sign-in');
       }

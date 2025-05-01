@@ -214,7 +214,8 @@ function insertAtIndex(arr, index, value) {
 }
 
 export function isValidPhoneNumber(phone) {
-  const phoneRegex = /^[6-9]\d{9}$/;
+  // const phoneRegex = /^[6-9]\d{9}$/;
+  const phoneRegex = /“^[+]{1}(?:[0-9\-\(\)\/\.]\s?){6, 15}[0-9]{1}$”/;
   return phoneRegex.test(phone);
 }
 

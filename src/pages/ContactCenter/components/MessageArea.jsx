@@ -27,9 +27,9 @@ const MessageArea = ({ messages, chatTitle, ticket }) => {
     useEffect(() => {
         const container = containerRef.current;
         if (container) {
-          container.scrollTop = container.scrollHeight; // auto-scroll to bottom on new messages
+            container.scrollTop = container.scrollHeight; // auto-scroll to bottom on new messages
         }
-      }, [messages]);
+    }, [messages]);
 
     useEffect(() => console.log(localCustomization), [localCustomization]);
     useEffect(() => console.log(localTicket), [localTicket])
@@ -53,22 +53,22 @@ const MessageArea = ({ messages, chatTitle, ticket }) => {
                                     <hr />
                                 </div>
                             )}
-                            <div className={`${styles.chatBox} ${message.senderType === 'team'? styles.team : styles.visitor}`}>
+                            <div className={`${styles.chatBox} ${message.senderType === 'team' ? styles.team : styles.visitor}`}>
                                 <img src={pickRandomImage(images)} alt="" />
                                 <div>
-                                    <p className={styles.chatTitle}>{message.senderType === 'team'? `${user.firstName} ${user.lastName}` : chatTitle}</p>
+                                    <p className={styles.chatTitle}>{message.senderType === 'team' ? `${user.firstName} ${user.lastName}` : chatTitle}</p>
                                     <p className={styles.messageText}>{message.content}</p>
                                 </div>
                             </div>
+                            {(index===0 && isMissedChat(localTicket?.createdAt, localCustomization?.timer)) && <p style={{
+                                textAlign: 'center',
+                                color: 'red',
+                                fontWeight: '500',
+                                fontSize: '0.9rem'
+                            }}>Replying to a missed chat</p>}
                         </div>
                     )
                 })}
-                {isMissedChat(localTicket?.createdAt, localCustomization?.timer) && <p style={{
-                    textAlign: 'center',
-                    color: 'red',
-                    fontWeight: '500',
-                    fontSize: '0.9rem'
-                }}>Replying to a missed chat</p>}
             </div>
         </div>
     )
@@ -78,15 +78,15 @@ function isMissedChat(createdAt, timer) {
     console.log(createdAt);
     const createdDate = new Date(createdAt);
     const now = new Date();
-  
+
     const diffInMs = now - createdDate;
-  
+
     const timerInMs =
-      (timer?.hours || 0) * 60 * 60 * 1000 +
-      (timer?.minutes || 0) * 60 * 1000 +
-      (timer?.seconds || 0) * 1000;
-  
+        (timer?.hours || 0) * 60 * 60 * 1000 +
+        (timer?.minutes || 0) * 60 * 1000 +
+        (timer?.seconds || 0) * 1000;
+
     return diffInMs > timerInMs;
-}  
+}
 
 export default MessageArea

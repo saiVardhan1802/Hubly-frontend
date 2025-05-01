@@ -146,6 +146,21 @@ export async function getMessages(visitorId) {
     }
 }
 
+export async function getMessagesByTicketId(ticketId, token) {
+    try {
+        const response = await fetch(`${API_URL}/api/chats/ticket/${ticketId}`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`,
+            },
+        });
+        return response;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export async function getTicketsById(userId, token) {
     try {
         const response = await fetch(`${API_URL}/api/tickets/${userId}`, {

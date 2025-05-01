@@ -13,9 +13,14 @@ const ResolvedTickets = ({ percentage }) => {
       <div style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '1em'
+        gap: '1em',
+        width: '85%'
       }}>
-        <h2>Resolved Tickets</h2>
+        <h2 style={{ 
+            color: '#00D907' ,
+            fontSize: '1.7rem',
+            fontWeight: '600'
+        }}>Resolved Tickets</h2>
         <p style={{ fontSize: '0.85rem'}}>A callback system on a website, as well as proactive invitations, help to attract even more customers. A separate round button for ordering a call with a small animation helps to motivate more customers to make calls.</p>
       </div>
       <ProgressBar percentage={percentage} />

@@ -2,6 +2,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap"); */
 
+.main {
+    font-family: "Inter", sans-serif;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    width: 85%;
+    margin: 4em auto 0 auto;
+    display: flex;
+    gap: 7em;
+}
+
+.middle {
+    width: 85%;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    border: 1px solid #6FA4D7;
+    border-radius: 8px;
+    padding: 1em;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.platformWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.platformWrapper > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.planContainer {
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1em;
+}
+
 .chatbot {
     position: fixed;
     bottom: 2vh;

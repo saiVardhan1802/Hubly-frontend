@@ -26,10 +26,10 @@ const ContactCenter = () => {
         }
         const data = await response.json();
         const ticketsFromServer = data.tickets;
-        const unresolvedTickets = ticketsFromServer.filter(ticket => ticket.status === 'unresolved');
+        // const unresolvedTickets = ticketsFromServer.filter(ticket => ticket.status === 'unresolved');
         // console.log(ticketsFromServer);
         // console.log(unresolvedTickets);
-        setTickets(unresolvedTickets);
+        setTickets(ticketsFromServer);
       }
 
       fetchTickets();

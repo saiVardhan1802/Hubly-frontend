@@ -4,6 +4,10 @@
     display: flex;
 }
 
+.pointerEvents {
+    pointer-events: none;
+}
+
 .main {
     width: 93%;
     font-family: 'Poppins', sans-serif;

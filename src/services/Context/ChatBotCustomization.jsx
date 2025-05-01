@@ -77,7 +77,7 @@ const ChatBotCustomizationProvider = ({ children }) => {
                     return;
                 }
                 if (!response.ok) {
-                    toast.error('Something went wrong. Please try again.');
+                    // toast.error('Something went wrong. Please try again.');
                     return;
                 }
                 const data = await response.json();
@@ -85,7 +85,7 @@ const ChatBotCustomizationProvider = ({ children }) => {
                 dispatch({ type: ACTIONS.SET_CUSTOMIZATION, payload: data });
             } catch (error) {
                 console.log(error);
-                toast.error('Something went wrong. Please try again.');
+                // toast.error('Something went wrong. Please try again.');
             }
         };
     

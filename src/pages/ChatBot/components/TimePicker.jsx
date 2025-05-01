@@ -85,7 +85,7 @@ const TimePicker = () => {
             }
             if (!response.ok) {
                 // console.log(response.body);
-                toast.error("Something went wrong. Please try again.");
+                // toast.error("Something went wrong. Please try again.");
                 return;
             }
             toast.success("Customization successfully saved.")

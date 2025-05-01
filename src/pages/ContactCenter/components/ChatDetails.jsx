@@ -28,6 +28,13 @@ const ChatDetails = ({ tickets, selectedTicketId, setTickets, setLeavingMessage 
   const [modalType, setModalType] = useState('');
   const [differentTeamId, setDifferentTeamId] = useState('');
   const [differentUserId, setDifferentUserId] = useState('');
+  const [selectedTicket, setSelectedTicket] = useState({});
+
+  useEffect(() => {
+    if (tickets.length === 0 || !selectedTicketId) return;
+    const ticket = tickets.filter(ticket => ticket._id === selectedTicketId)[0];
+    setSelectedTicket(ticket);
+  }, [tickets, selectedTicketId]);
 
 
   console.log("teams in chat details", teams);
@@ -66,103 +73,116 @@ const ChatDetails = ({ tickets, selectedTicketId, setTickets, setLeavingMessage 
 
   return (
     // (!tickets.length === 0) ?
-      <div className={styles.container}>
-        <div className={styles.title}>
-          <img src={pickRandomImage(images)} alt="Chat profile" />
-          <p>Chat</p>
+    <div className={styles.container}>
+      <div className={styles.title}>
+        <img src={pickRandomImage(images)} alt="Chat profile" />
+        <p>Chat</p>
+      </div>
+      <h2>Details</h2>
+      {visitorKeys.map((key, index) => (
+        <div key={index} className={styles.box}>
+          <img src={visitorIcons[index]} alt="icon" />
+          <p>{visitor[key]}</p>
         </div>
-        <h2>Details</h2>
-        {visitorKeys.map((key, index) => (
-          <div key={index} className={styles.box}>
-            <img src={visitorIcons[index]} alt="icon" />
-            <p>{visitor[key]}</p>
-          </div>
-        ))}
+      ))}
 
-        {/* Teams */}
-        {user.role === 'super-admin' && <h2 style={{ marginTop: '1em' }}>Teams</h2>}
-        {user.role === 'super-admin' &&
-          <button className={`${styles.box} ${styles.dropBox}`} type='button' onClick={() => setOpenTeams(prev => !prev)}>
+      {/* Teams */}
+      {user.role === 'super-admin' && selectedTicket.status === 'unresolved' && (
+        <>
+          <h2 style={{ marginTop: '1em' }}>Teams</h2>
+          <button
+            className={`${styles.box} ${styles.dropBox}`}
+            type='button'
+            onClick={() => setOpenTeams(prev => !prev)}
+          >
             <AiOutlineTeam className={styles.icon} />
             <p>{currentUserTeam?.teamName}</p>
           </button>
-        }
-        {openTeams &&
-          <div className={`${styles.box} ${styles.selectionContainer}`}>
-            {Object.values(teams)?.map((team, index) => (
-              <button key={index} onClick={() => {
-                setModalType('teams');
-                setIsModalOpen(true);
-                setDifferentTeamId(team.teamId);
-              }}>
-                <AiOutlineTeam className={styles.icon} />
-                <p>{team?.teamName}</p>
-              </button>
-            ))}
-          </div>
-        }
+        </>
+      )}
+      {openTeams &&
+        <div className={`${styles.box} ${styles.selectionContainer}`}>
+          {Object.values(teams)?.map((team, index) => (
+            <button key={index} onClick={() => {
+              setModalType('teams');
+              setIsModalOpen(true);
+              setDifferentTeamId(team.teamId);
+            }}>
+              <AiOutlineTeam className={styles.icon} />
+              <p>{team?.teamName}</p>
+            </button>
+          ))}
+        </div>
+      }
 
-        {/* Team Members */}
-        {(user.role === 'admin' || user.role === 'super-admin') && <h2 style={{ marginTop: '1em' }}>Team Members</h2>}
-        {(user.role === 'super-admin' || user.role === 'admin') &&
-          <button className={`${styles.box} ${styles.dropBox}`} type='button' onClick={() => setOpenTeamMembers(prev => !prev)}>
+      {/* Team Members */}
+      {(user.role === 'admin' || user.role === 'super-admin') && selectedTicket.status === 'unresolved' && (
+        <>
+          <h2 style={{ marginTop: '1em' }}>Team Members</h2>
+          <button
+            className={`${styles.box} ${styles.dropBox}`}
+            type='button'
+            onClick={() => setOpenTeamMembers(prev => !prev)}
+          >
             <AiOutlineTeam className={styles.icon} />
             <p>{`${user?.firstName} ${user?.lastName}`}</p>
           </button>
-        }
-        {openTeamMembers &&
-          <div className={`${styles.box} ${styles.selectionContainer}`}>
-            {currentUserTeam?.users.map((user, index) => (
-              <button key={index} onClick={() => {
-                setModalType('members')
-                setIsModalOpen(true);
-                setDifferentUserId(user._id);
-              }}>
-                <AiOutlineTeam className={styles.icon} />
-                <p>{`${user?.firstName} ${user?.lastName}`}</p>
-              </button>
-            ))}
-          </div>
-        }
+        </>
+      )}
+      {openTeamMembers &&
+        <div className={`${styles.box} ${styles.selectionContainer}`}>
+          {currentUserTeam?.users.map((user, index) => (
+            <button key={index} onClick={() => {
+              setModalType('members')
+              setIsModalOpen(true);
+              setDifferentUserId(user._id);
+            }}>
+              <AiOutlineTeam className={styles.icon} />
+              <p>{`${user?.firstName} ${user?.lastName}`}</p>
+            </button>
+          ))}
+        </div>
+      }
 
-        {/* ticket status */}
+      {/* ticket status */}
+      {selectedTicket.status === "unresolved" &&
         <button type='button'
           className={`${styles.box} ${styles.dropBox}`}
           onClick={() => setClickedTicketStatus(prev => !prev)}
         >
           <img src={ticketIcon} alt="Ticket icon" />
           <p>Ticket Status</p>
-        </button>
-        {clickedTicketStatus &&
-          <div className={`${styles.box} ${styles.selectionContainer}`}>
-            <button type='button' onClick={() => {
-              setModalType('ticket');
-              setIsModalOpen(true);
-            }}>
-              <p>Resolved</p>
-            </button>
-            <button type='button' onClick={() => toast("Ticket set to unresolved")}>
-              <p>Unresolved</p>
-            </button>
-          </div>
-        }
-        {isModalOpen &&
-          <ModalComponent
-            type={modalType}
-            setIsModal={setIsModalOpen}
-            differentTeamId={differentTeamId}
-            teams={teams}
-            ticketId={selectedTicketId}
-            setTickets={setTickets}
-            differentUserId={differentUserId}
-            setLeavingMessage={setLeavingMessage}
-          />
-        }
-      </div>
-      // :
-      // <div className={styles.empty}>
-      //   <p>Nothing to show here.</p>
-      // </div>
+        </button>}
+      {clickedTicketStatus &&
+        <div className={`${styles.box} ${styles.selectionContainer}`}>
+          <button type='button' onClick={() => {
+            setModalType('ticket');
+            setIsModalOpen(true);
+          }}>
+            <p>Resolved</p>
+          </button>
+          <button type='button' onClick={() => toast("Ticket set to unresolved")}>
+            <p>Unresolved</p>
+          </button>
+        </div>
+      }
+      {isModalOpen &&
+        <ModalComponent
+          type={modalType}
+          setIsModal={setIsModalOpen}
+          differentTeamId={differentTeamId}
+          teams={teams}
+          ticketId={selectedTicketId}
+          setTickets={setTickets}
+          differentUserId={differentUserId}
+          setLeavingMessage={setLeavingMessage}
+        />
+      }
+    </div>
+    // :
+    // <div className={styles.empty}>
+    //   <p>Nothing to show here.</p>
+    // </div>
 
   )
 }

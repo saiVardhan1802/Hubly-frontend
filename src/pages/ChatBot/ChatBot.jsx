@@ -20,9 +20,7 @@ const ChatBot = () => {
         <h1>Chat Bot</h1>
         <div className={styles.container}>
           <div className={styles.chatBotContainer}>
-            <ChatbotComponent containerStyles={{
-              pointerEvents: 'none'
-            }} />
+            <ChatbotComponent additionalChatBotStyles={styles.pointerEvents} />
             <WelcomeMessageDisplay containerStyles={{
               pointerEvents : 'none'
             }} />

@@ -56,11 +56,11 @@ const TicketComponent = ({ ticket }) => {
                             <p style={{ fontSize: '0.9rem' }}>{visitorData?.email}</p>
                         </div>
                     </div>
-                    {ticket.status === 'unresolved' &&
+                    
                         <button onClick={() => handleClick(ticket._id)} style={{ marginRight: '1em'}} type='button'>
                             <p style={{ color: '#184E7F', textDecoration: 'underline', fontWeight: '600' }}>Open Ticket</p>
                         </button>
-                    }
+                    
                 </div>
                 <p style={{
                     position: 'absolute',

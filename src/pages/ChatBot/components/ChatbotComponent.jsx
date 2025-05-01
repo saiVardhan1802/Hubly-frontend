@@ -30,7 +30,7 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
         try {
           const response = await getCustomization();
           if (!response.ok) {
-            toast.error('Something went wrong. Please try again.');
+            // toast.error('Something went wrong. Please try again.');
             return;
           }
           const data = await response.json();
@@ -38,7 +38,7 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
           setCustomization(data);
         } catch (error) {
           console.log(error);
-          toast.error('Something went wrong. Please try again.');
+          // toast.error('Something went wrong. Please try again.');
         }
       };
 
@@ -70,14 +70,14 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
     }
   }, [])
 
+  useEffect(() => console.log(displayForm), [displayForm])
+
   async function handleMessageSubmit(e) {
     e.preventDefault();
     if (!text.trim()) return;
     if (!visitorData) {
-
-
+      debugger;
       if (!text.trim()) return;
-
       // Normal message sending
       setMessages(prev => [
         ...prev,
@@ -91,6 +91,7 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
 
       // After 1 second, show team messages
       setTimeout(() => {
+        debugger;
         const customizedMessages = customization.initialMessages.map(msg => ({
           content: msg,
           senderType: 'team',

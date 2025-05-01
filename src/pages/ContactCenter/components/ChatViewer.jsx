@@ -73,12 +73,25 @@ const ChatViewer = ({ tickets, selectedTicketId, chatTitle, leavingMessage }) =>
           <p>{formatCreatedAt(new Date())}</p>
         </div>
       }
-      {!leavingMessage ?
-        <TextAreaComponent ticket={selectedTicket} setMessages={setChatMessages} ticketId={selectedTicketId} visitorId={selectedTicket.visitorId} />
-        :
-        <div className={styles.leavingTextarea}>
-          <p>{leavingMessage}</p>
-        </div>
+      {
+        !leavingMessage ? (
+          selectedTicket.status === "unresolved" ? (
+            <TextAreaComponent
+              ticket={selectedTicket}
+              setMessages={setChatMessages}
+              ticketId={selectedTicketId}
+              visitorId={selectedTicket.visitorId}
+            />
+          ) : (
+            <div className={styles.leavingTextarea}>
+              <p>This chat has been resolved</p>
+            </div>
+          )
+        ) : (
+          <div className={styles.leavingTextarea}>
+            <p>{leavingMessage}</p>
+          </div>
+        )
       }
     </div>
     // :

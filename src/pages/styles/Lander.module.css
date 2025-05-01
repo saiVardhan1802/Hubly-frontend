@@ -58,6 +58,7 @@
     align-items: flex-end;
     font-family: "Helvetica", sans-serif;
     gap: 2vh;
+    z-index: 1000;
 }
 
 .chatbotButton {

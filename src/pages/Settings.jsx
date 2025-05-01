@@ -48,6 +48,7 @@ const Settings = () => {
       if (!response.ok) return toast.error(data.message || "Failed update profile. Please try again.");
       console.log(data);
       if (data.logout) {
+        console.log(data);
         localStorage.clear();
         navigate('/sign-in');
       }

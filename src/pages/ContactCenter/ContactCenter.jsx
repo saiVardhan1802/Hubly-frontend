@@ -21,7 +21,8 @@ const ContactCenter = () => {
       async function fetchTickets() {
         const response = await getTicketsById(user.id, token);
         if (!response.ok) {
-          return toast.error("Failed to fetch events. Please try again.");
+          return
+          // return toast.error("Failed to fetch events. Please try again.");
         }
         const data = await response.json();
         const ticketsFromServer = data.tickets;

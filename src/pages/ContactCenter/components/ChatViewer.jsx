@@ -32,7 +32,7 @@ const ChatViewer = ({ tickets, selectedTicketId, chatTitle, leavingMessage }) =>
     async function fetchMessages() {
       try {
         const response = await getMessagesByTicketId(selectedTicketId, token);
-        if (!response.ok) return toast.error('Failed to fetch messages. Please try again.');
+        if (!response.ok) return //toast.error('Failed to fetch messages. Please try again.');
         const data = await response.json();
         const messagesFromApi = data.messages;
         console.log(messagesFromApi);

@@ -15,67 +15,7 @@ const ChatsComponent = ({ tickets, selectedTicketId, setSelectedTicketId, setCha
   const images = [imageOne, imageTwo];
   const [chatMessages, setChatMessages] = useState();
 
-  // useEffect(() => {
-  //   try {
-  //     async function fetchTickets() {
-  //       const response = await getTicketsById(user.id, token);
-  //       if (!response.ok) {
-  //         return toast.error("Failed to fetch events. Please try again.");
-  //       }
-  //       const data = await response.json();
-  //       const ticketsFromServer = data.tickets;
-  //       setTickets(ticketsFromServer);
-  //     }
-
-  //     fetchTickets();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }, []);
-
-
-  // const [selectedTicketId, setSelectedTicketId] = useState(() => {
-  //   const storedId = localStorage.getItem('selectedTicketId');
-  //   if (storedId) {
-  //     console.log("StoredId: ", storedId);
-  //     return storedId;
-  //   } else if (tickets.length > 0) {
-  //     return tickets[0]._id;
-  //   } else {
-  //     return null;
-  //   }
-  // });
-
-  // useEffect(() => {
-  //   if (tickets.length > 0 && !selectedTicketId) {
-  //     setSelectedTicketId(tickets[0]._id);
-  //   }
-  // }, [tickets]);
-
-  // useEffect(() => {
-  //   if (!selectedTicketId || tickets.length === 0) return;
   
-  //   const selectedTicket = tickets.find(ticket => ticket._id === selectedTicketId);
-    
-  //   if (!selectedTicket) return;
-  
-  //   console.log(selectedTicket);
-  
-  //   async function fetchMessages() {
-  //     try {
-  //       const response = await getMessages(selectedTicket.visitorId);
-  //       if (!response.ok) return toast.error('Failed to fetch messages. Please try again.');
-  //       const data = await response.json();
-  //       const messagesFromApi = data.messages;
-  //       console.log(messagesFromApi);
-  //       setChatMessages(messagesFromApi);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   }
-  
-  //   fetchMessages();
-  // }, [selectedTicketId, tickets]);  
 
 
 

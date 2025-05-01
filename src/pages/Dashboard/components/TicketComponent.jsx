@@ -15,7 +15,7 @@ const TicketComponent = ({ ticket }) => {
         try {
             async function fetchVisitorData() {
                 const response = await getVisitor(ticket?.visitorId, token);
-                if (!response.ok) return toast.error("Failed to fetch ticket. Please try again.");
+                if (!response.ok) return //toast.error("Failed to fetch ticket. Please try again.");
                 const data = await response.json();
                 const visitorFromApi = data.visitor;
                 setVisitorData(visitorFromApi);

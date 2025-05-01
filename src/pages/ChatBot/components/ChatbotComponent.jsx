@@ -55,7 +55,8 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
       try {
         const response = await getMessages(visitorData.id);
         if (!response.ok) {
-          return toast.error("Failed to fetch messages. Try again.")
+          return 
+          // toast.error("Failed to fetch messages. Try again.")
         }
         const data = await response.json();
         const fetchedMessages = data.messages;

@@ -17,7 +17,7 @@ const Analytics = () => {
       try {
         const response = await getAnalytics(token);
         if (!response.ok) {
-          toast.error('Failed to fetch analytics. Please try again');
+          // toast.error('Failed to fetch analytics. Please try again');
           return;
         }
         const data = await response.json();

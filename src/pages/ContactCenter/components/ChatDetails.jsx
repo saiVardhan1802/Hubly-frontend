@@ -44,7 +44,7 @@ const ChatDetails = ({ tickets, selectedTicketId, setTickets, setLeavingMessage 
       if (!selectedTicket) return;
       async function fetchVisitor() {
         const response = await getVisitor(selectedTicket?.visitorId, token);
-        if (!response.ok) return toast.error("Failed to fetch visitor data. Please try again.");
+        if (!response.ok) return //toast.error("Failed to fetch visitor data. Please try again.");
         const data = await response.json();
         const visitorFromApi = data.visitor;
         setVisitor(visitorFromApi);

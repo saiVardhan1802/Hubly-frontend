@@ -51,14 +51,14 @@ const data = [
 
 export default function Chart({ data }) {
     return (
-        <div style={{ marginTop: '1em', height: '50vh', width: '60%', backgroundColor: '' }}>
+        <div style={{ marginTop: '1em', height: '50vh', width: '60%' }}>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                     width={500}
                     height={300}
                     data={data}
                     margin={{
-                        top: 5,
+                        top: 10,
                         right: 30,
                         bottom: 5,
                     }}

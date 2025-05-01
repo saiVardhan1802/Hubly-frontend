@@ -73,7 +73,7 @@ const Team = () => {
                         <p>{user.email}</p>
                       </div>
                       <div className={styles.teamMemberRole}>
-                        <p>{user.role}</p>
+                        <p>{user.role === 'super-admin' ? 'admin' : user.role}</p>
                       </div>
                       {(
                         (currentUser.role === 'super-admin' || currentUser.role === 'admin') &&

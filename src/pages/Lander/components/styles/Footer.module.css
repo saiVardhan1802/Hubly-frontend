@@ -1,7 +1,17 @@
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 30%; */
+    align-items: flex-start;
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+  }
+
 .footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    gap: 2em 6em;
     padding: 2rem;
     background-color: #f9f9f9;
   }

@@ -76,7 +76,6 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
     e.preventDefault();
     if (!text.trim()) return;
     if (!visitorData) {
-      debugger;
       if (!text.trim()) return;
       // Normal message sending
       setMessages(prev => [
@@ -90,8 +89,8 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
       setText("");
 
       // After 1 second, show team messages
+      if (!customization) return toast.error("A")
       setTimeout(() => {
-        debugger;
         const customizedMessages = customization.initialMessages.map(msg => ({
           content: msg,
           senderType: 'team',
@@ -141,7 +140,9 @@ const ChatbotComponent = ({ additionalChatBotStyles, additionalChatContainerStyl
     try {
       const response = await createVisitor(visitorData, messages);
       if (!response.ok) {
-        toast.error("Failed to upload data. Please try again.");
+        const data = await response.json()
+        console.log(data);
+        toast.error(data.message || "Failed to upload data. Please try again.");
         return;
       }
       const data = await response.json();
